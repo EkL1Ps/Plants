@@ -5,7 +5,6 @@
     .contacts {
         @include blockSize();
         @include fontContacts();
-
         background-color: #0C4B35;
         height: 59px;
         display: flex;
@@ -100,7 +99,7 @@
         display: none;
     }
 }
-@media (max-width: 1023px) {
+@media (min-width: 375px) and (max-width: 767px) {
     .bgc-blackgreen {
         background-color: $blackgreen;
         height: 55px;
@@ -112,9 +111,9 @@
 
         p {
             margin: 20px 0 0 5px;
-        }
-        span {
-            display: none;
+            span {
+                display: none;
+            }
         }
         img {
             width: 20px;
@@ -150,6 +149,101 @@
         height: 34px;
         border-radius: 10px;
         margin-left: 145px;
+        p {
+            display: none;
+        }
+        img {
+            height: 20px;
+            width: 20px;
+            margin-top: 5px;
+        }
+    }
+    .burger {
+        display: flex;
+        position: relative;
+        z-index: 50;
+        align-items: center;
+        justify-content: flex-end;
+        width: 30px;
+        height: 30px;
+        margin-left: 40px;
+        
+        span {
+            height: 2px;
+            width: 100%;
+            transform: scale(1);
+            background-color: #00730C;
+        }
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: #00730C;
+            transition: all .3s ease 0s;
+        }
+        &::before {
+            top: 5px;
+        }
+        &::after {
+            left: 0;
+            bottom: 5px;
+            width: 66%;
+        }
+    }
+}
+
+
+@media(min-width: 768px) and (max-width: 1439px)  {
+    .bgc-blackgreen {
+        background-color: $blackgreen;
+        height: 55px;
+    }
+    .contacts {
+        @include blockSizeForTablets();
+        @include fontContacts();
+        display: flex;
+
+        p {
+            margin: 20px 0 0 5px;
+            span {
+                display: none;
+            }
+        }
+        img {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+        }
+    }
+    .languages {
+        margin-left: 540px;
+    }
+    .header-main {
+        @include blockSizeForTablets();
+        display: flex;
+    }
+    .header-main-content {
+        display: flex;
+        margin-top: 15px;
+    }
+    .logo {
+        img {
+        width: 100px;
+        height: 50px;   
+        }
+    }
+    .nav-menu {
+        display: none;
+    }
+    .green-button {
+        @include greenButton();
+    }
+    .header-button {
+        width: 40px;
+        height: 34px;
+        border-radius: 10px;
+        margin-left: 540px;
         p {
             display: none;
         }

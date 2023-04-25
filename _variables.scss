@@ -6,6 +6,10 @@
     max-width: 345px;
     margin: 0px auto;
 }
+@mixin blockSizeForTablets {
+    max-width: 750px;
+    margin: 0 auto;
+}
 @mixin fontContacts() {
     font-family: 'Poppins';
     font-style: normal;
